@@ -1,4 +1,6 @@
 import json
+import os
+import time
 
 
 ##############################################################################################
@@ -10,6 +12,11 @@ import json
 ##############################################################################################
 ###################################################################Code Reviewer: th3f1x######
 ##############################################################################################
+
+
+
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def load_dict(existent_file):
     try:
@@ -24,22 +31,29 @@ def save_dict(dictionary, existent_file):
         json.dump(dictionary, file, ensure_ascii=False, indent=4)
 
 def add_to_dict(dictionary):
-    while True:
+    checker = True
+    while checker == True:
+        clear_console()
         entry_type = input("Para adicionar uma palavra, digite (1), para uma expressão digite (2), para sair insira apenas dê enter.").strip().lower()
 
         if entry_type == '1':
-            word = input("Digite a palavra na língua indígena: ").strip()
-            translate = input(f"Digite a tradução da palavra '{word}' em português: ").strip()
+            word = input("Digite a palavra na língua indígena: ").strip().lower()
+            translate = input(f"Digite a tradução da palavra '{word}' em português: ").strip().lower()
             dictionary[word] = translate
+            print(f"\n Salvando {word} = {translate} \n")
+            time.sleep(2)
 
         elif entry_type == '2':
-            expression = input("Digite a expressão na língua indígena: ").strip()
-            translate = input(f"Digite a tradução da expressão '{expression}' em português: ").strip()
+            expression = input("Digite a expressão na língua indígena: ").strip().lower()
+            translate = input(f"Digite a tradução da expressão '{expression}' em português: ").strip().lower()
             dictionary[expression] = translate
+            print(f"\n Salvando {word} = {translate} \n")
+            time.sleep(2)
 
 
         else:
-            print("Opção inválida. Finalizando aplicação . . .")
+            checker = 'False'
+            print("Finalizando aplicação . . .")
             break
 
     return dictionary
