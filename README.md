@@ -15,6 +15,6 @@
 
 
 ### Colaboradores
-- Th3f1x
--
--
+- @Th3f1x
+- @Montibello
+- @Ricardo-909-Leal
