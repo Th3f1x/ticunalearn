@@ -4,7 +4,7 @@ def sub_line(line):
     
 
     elif line.strip() == "Nori arü ügü ga ore ga nucüma'ǖ ga torü ga na nhunhaacü yi'i'ǖ.":
-        return "Aqui começa a história do tempo dos antigos "
+        return " Aqui começa a história do tempo dos antigos "
     
 
     elif line.strip() == "Norü ügü tchiga":
@@ -100,7 +100,7 @@ def process_input():
 
         translated_line = sub_line(line)  
         
-        translated_text += translated_line + "///"
+        translated_text += translated_line
         
         last_line = line 
 
