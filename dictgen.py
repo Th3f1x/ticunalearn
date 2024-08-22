@@ -47,7 +47,7 @@ def add_to_dict(dictionary):
             expression = input("Digite a expressão na língua indígena: ").strip().lower()
             translate = input(f"Digite a tradução da expressão '{expression}' em português: ").strip().lower()
             dictionary[expression] = translate
-            print(f"\n Salvando {word} = {translate} \n")
+            print(f"\n Salvando {expression} = {translate} \n")
             time.sleep(2)
 
 
